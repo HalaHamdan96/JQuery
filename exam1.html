@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.11.2-web/css/all.css">
+	<style type="text/css">
+		#icon{
+			font-size: 30px;
+		    color: gray;
+		    position: fixed;
+		    display: none;
+		     }
+	</style>
+	<script type="text/javascript" src="jQuery.js"></script>
+	<script type="text/javascript">
+   $("document").ready(function(){
+      	$("#par1").hide();
+
+        $("#bt1").click(function(){
+    	$("#par1").show("3000");
+           });
+        $("#bt2").click(function(){
+    	$(".rd").css("color","red");
+    	$(".rd:first").css("color","green");
+
+           });
+            
+        $("#jocity").hide();
+        $("#lebcity").hide();
+        $("#state").hide();
+        $("#pcode").hide();
+
+        $("#count").change(function(){
+        	if($(this).val()=='0'){
+    	      $("#jocity").show("3000");
+    	       $("#lebcity").hide();
+    	       $("#state").hide();
+               $("#pcode").hide();
+        	}
+        	else if($(this).val()=='1'){
+    	      $("#lebcity").show("3000");
+    	      $("#jocity").hide();
+    	      $("#state").hide();
+              $("#pcode").hide();
+        	}
+             else if($(this).val()=='2'){
+    	      $("#state").show("3000");
+    	       $("#pcode").show("3000");
+    	       $("#jocity").hide();
+    	       $("#lebcity").hide();
+        	}
+           });
+       
+        
+         $("#sum").click(function(){
+        var number1= $("#num1").val();
+        var number2= $("#num2").val();
+        var res=parseInt(number1)+parseInt(number2);
+        $("#result").val(res);
+         });
+         $("#div").click(function(){
+        var number1= $("#num1").val();
+        var number2= $("#num2").val();
+        var res=parseInt(number1)/parseInt(number2);
+        $("#result").val(res);
+         });
+         $("#mul").click(function(){
+        var number1= $("#num1").val();
+        var number2= $("#num2").val();
+        var res=parseInt(number1)*parseInt(number2);
+        $("#result").val(res);
+         });
+         $("#sub").click(function(){
+        var number1= $("#num1").val();
+        var number2= $("#num2").val();
+        var res=parseInt(number1)-parseInt(number2);
+        $("#result").val(res);
+         });
+
+         $(window).scroll(function(){
+           if($(this).scrollToTop()>100)
+           	  $("#icon").fadeIn();
+           else
+           	  $("#icon").hide();
+
+         });
+
+         $("#icon").click(function(){
+         	$('html,body').animate({scrollTop:0},800);
+         });
+        
+   });
+	</script>
+</head>
+<body>
+	
+	<h1 style="background-color: #87d6c1; text-align: center;">jQuery exampel</h1>
+<p>Whats is HTML ?</p>
+<button id="bt1" style="width: 70px; height: 30px; border-radius: 7px; font-weight: bold; background-color: #87d6c1">Show</button>
+<p id="par1">short for Hypertext Markup Language. HTML is used to create electronic documents (called pages)</p>
+<br><br>
+<p>Where is HTU ?</p>
+<input type="radio" name="city" ><lable class="rd">Amman</lable>
+<input type="radio" name="city" ><label class="rd">Irbid</label>
+<input type="radio" name="city" ><label class="rd">Aqaba</label>
+<input type="radio" name="city" ><label class="rd">Zarqa</label>
+<button id="bt2" style="width: 120px; height: 40px; border-radius: 7px; font-weight: bold; background-color: #87d6c1">Check Answer</button><br><br>
+
+<select id="count">
+	<option selected="" disabled="">Country</option>
+	<option value="0" >Jordan</option>
+	<option value="1">Lebanon</option>
+	<option value="2">USA</option>
+</select>
+
+<select id="jocity">
+	<option selected="" disabled="">City</option>
+	<option>Amman</option>
+	<option>Irbid</option>
+</select>
+<select id="lebcity">
+	<option selected="" disabled="">City</option>
+	<option>Bairout</option>
+	<option>trablos</option>
+</select>
+<select id="state">
+	<option selected="" disabled="">State</option>
+	<option>California</option>
+	<option>Flourida</option>
+</select>
+<select id="pcode">
+	<option selected="" disabled="">Postal Code</option>
+	<option>99661</option>
+	<option>78654</option>
+</select>
+<br><br><br>
+<label>Number1:</label>
+<input type="number" name="" id="num1" placeholder="insert number">
+<label>Number2:</label>
+<input type="number" name="" id="num2" placeholder="insert number"><br><br>
+
+<button id="sum" style="width: 70px; height: 30px; border-radius: 7px; font-weight: bold; background-color: #b1e3d6">+</button>
+<button id="sub" style="width: 70px; height: 30px; border-radius: 7px; font-weight: bold; background-color: #87d6c1">-</button>
+<button id="div" style="width: 70px; height: 30px; border-radius: 7px; font-weight: bold; background-color: #b1e3d6">/</button>
+<button id="mul" style="width: 70px; height: 30px; border-radius: 7px; font-weight: bold; background-color: #87d6c1">x</button><br><br>
+<input type="number" name="" id="result"  readonly="" placeholder="result">
+<br><br>
+<i class="fas fa-rocket"  id="icon" ></i>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
